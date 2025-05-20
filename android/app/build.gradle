@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'com.google.gms.google-services'   // ✅ Required for Firebase
+    id 'dev.flutter.flutter-gradle-plugin'
+}
+
+android {
+    namespace = "com.example.fyp"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.fyp"
+        minSdkVersion 23         // ✅ CORRECT
+        targetSdk = 33
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:32.1.1')   // ✅ BoM for Firebase versions
+    implementation 'com.google.firebase:firebase-auth'                   // ✅ Firebase Auth
+    implementation 'org.tensorflow:tensorflow-lite-select-tf-ops:2.11.0'
+    // (Optional) Add other Firebase services like analytics or firestore here
+    // implementation 'com.google.firebase:firebase-analytics'
+}

@@ -1,0 +1,2 @@
+F:/HAJRA FYP/FYP/fyp/android/app/.cxx/Debug/3e1a5m2u/x86_64/CMakeFiles/edit_cache.dir
+F:/HAJRA FYP/FYP/fyp/android/app/.cxx/Debug/3e1a5m2u/x86_64/CMakeFiles/rebuild_cache.dir
